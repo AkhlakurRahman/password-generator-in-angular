@@ -1,0 +1,44 @@
+.password-container {
+  max-width: 100%;
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: rgb(122, 179, 144);
+  color: #444444;
+  padding: 3rem;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.password-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  display: block;
+  width: 20rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 6px;
+  margin-bottom: 1rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 3rem;
+  background-color: rgb(36, 92, 58);
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}

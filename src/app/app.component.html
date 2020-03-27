@@ -1,64 +1,67 @@
-<h1>Password Generator</h1>
+<div class="password-container">
+  <h1>Password Generator</h1>
 
-<div>
-  <label for="generator">Enter Length</label>
-  <input
-    type="text"
-    (input)="onChangeLength($event.target.value)"
-    name="generator"
-    id="generator"
-  />
+  <div>
+    <label for="generator">Enter Length</label>
+    <input
+      type="text"
+      (input)="onChangeLength($event.target.value)"
+      name="generator"
+      id="generator"
+    />
+  </div>
+
+  <div>
+    <input
+      type="checkbox"
+      (change)="onChangeUseLetters()"
+      name="letters"
+      id="letters"
+    />
+    <label for="letters">Use Letters</label>
+  </div>
+
+  <div>
+    <input
+      type="checkbox"
+      (change)="onChangeUseNumbers()"
+      name="numbers"
+      id="numbers"
+    />
+    <label for="numbers">Use Numbers</label>
+  </div>
+
+  <div>
+    <input
+      type="checkbox"
+      (change)="onChangeUseSymbols()"
+      name="symbols"
+      id="symbols"
+    />
+    <label for="symbols">Use Symbols</label>
+  </div>
+
+  <div>
+    <button
+      [disabled]="
+        !(
+          passwordLength &&
+          (includeLetters || includeNumbers || includeSymbols)
+        )
+      "
+      (click)="onButtonClicked()"
+    >
+      Generate
+    </button>
+  </div>
+
+  <div *ngIf="generatedPassword">
+    <label for="yourpassword">Your Generated Password</label>
+    <input
+      [value]="generatedPassword"
+      type="text"
+      name="yourpassword"
+      id="yourpassword"
+    />
+  </div>
 </div>
-
-<div>
-  <label for="letters">Use Letters</label>
-  <input
-    type="checkbox"
-    (change)="onChangeUseLetters()"
-    name="letters"
-    id="letters"
-  />
-</div>
-
-<div>
-  <label for="numbers">Use Numbers</label>
-  <input
-    type="checkbox"
-    (change)="onChangeUseNumbers()"
-    name="numbers"
-    id="numbers"
-  />
-</div>
-
-<div>
-  <label for="symbols">Use Symbols</label>
-  <input
-    type="checkbox"
-    (change)="onChangeUseSymbols()"
-    name="symbols"
-    id="symbols"
-  />
-</div>
-
-<div>
-  <button
-    [disabled]="
-      !(passwordLength && (includeLetters || includeNumbers || includeSymbols))
-    "
-    (click)="onButtonClicked()"
-  >
-    Generate
-  </button>
-</div>
-
-<div>
-  <label for="yourpassword">Your Generated Password</label>
-  <input
-    [value]="generatedPassword"
-    type="text"
-    name="yourpassword"
-    id="yourpassword"
-  />
-</div>
-
-{{ generatedPassword }}
