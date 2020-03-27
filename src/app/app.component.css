@@ -7,7 +7,7 @@
   justify-content: center;
   margin: 0 auto;
   background-color: rgb(122, 179, 144);
-  color: #444444;
+  color: rgb(29, 45, 66);
   padding: 3rem;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
 }
@@ -41,4 +41,11 @@ button {
   color: #fff;
   font-size: 1.2rem;
   margin-bottom: 1rem;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: rgb(86, 117, 99);
+  color: #dddddd;
+  cursor: not-allowed;
 }
